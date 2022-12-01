@@ -1,0 +1,147 @@
+/* ~ */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf');
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F7E7FF;
+}
+
+.cabecera {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 100px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "Logo Logo . . Inicio Sobre-mi Contacto";
+    text-align: center;
+}
+
+.Logo {
+    grid-area: Logo;
+}
+
+.Contacto {
+    grid-area: Contacto;
+}
+
+.Sobre-mi {
+    grid-area: Sobre-mi;
+}
+
+.Inicio {
+    grid-area: Inicio;
+}
+
+.logo_cabecera {
+    width: 300px;
+    height: 300px;
+}
+
+.bienvenida {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr) 100px repeat(2, 1fr);
+    gap: 30px 30px;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items:center;
+    grid-template-areas:
+        ". . . ."
+        ". Titulo Titulo ."
+        ". Titulo Titulo ."
+        ". Contactame DescargarCV ."
+        ". Abajo Abajo ."
+        ". . . .";
+}
+
+.Titulo {
+    grid-area: Titulo;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 5em;
+    text-align: center;
+}
+
+.boton {
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-shadow: 2px 2px 2px #000000;
+    color: white;
+    border-radius: 20px;
+    background-color: #F3ABFF;
+}
+
+.Contactame {
+    grid-area: Contactame;
+    justify-self: right;
+}
+
+.DescargarCV {
+    grid-area: DescargarCV;
+    justify-self: left;
+}
+
+.DescargarCV button {
+    background-color: #393e46b6;
+}
+
+
+.Abajo {
+    grid-area: Abajo;
+    background-color: #F3ABFF;
+    color: white;
+    padding: 3%;
+    border-radius: 2000px;
+    font-size: 2em;
+}
+
+.resaltado {
+    color: #F3ABFF;
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.QuienSoy {
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 50px;
+}
+
+.QuienSoy h1 {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 100px;
+    color: #132238;
+    font-style: italic;
+}
+
+.QuienSoy p {
+    font-size: 1.5em;
+    color: #132238;
+    width: 45%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    font-weight:500;
+}
