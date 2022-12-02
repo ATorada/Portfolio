@@ -154,11 +154,11 @@ h1 {
   grid-template-areas:
     ". SobreComoTrabajo SobreComoTrabajo . . Busqueda Analisis ."
     ". SobreComoTrabajo SobreComoTrabajo . . Disenyo Desarrollo .";
-    width: 70%;
+  width: 70%;
 
-    justify-items: center;
-    align-items: center;
-    padding: 100px;
+  justify-items: center;
+  align-items: center;
+  padding: 100px;
 }
 
 .SobreComoTrabajo {
@@ -169,27 +169,30 @@ h1 {
   font-weight: 600;
 }
 
-.Busqueda, .Analisis, .Disenyo, .Desarrollo {
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 4px 2px -2px gray;
-    padding: 25px;
-    background-color: rgb(253, 250, 255);
-    border-radius: 15%;
+.Busqueda,
+.Analisis,
+.Disenyo,
+.Desarrollo {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 4px 2px -2px gray;
+  padding: 25px;
+  background-color: rgb(253, 250, 255);
+  border-radius: 15%;
 }
 
 .ComoTrabajo h1 {
-  font-size:1.5em;
+  font-size: 1.5em;
   text-align: left;
   padding-top: 5px;
   color: #132238;
 }
 
 .ComoTrabajo img {
-    background-color: #edd8ff83;
-    border-radius: 20%;
-    padding: 20px;
-  }
+  background-color: #edd8ff83;
+  border-radius: 20%;
+  padding: 20px;
+}
 
 .Busqueda {
   grid-area: Busqueda;
@@ -206,4 +209,3 @@ h1 {
 .Desarrollo {
   grid-area: Desarrollo;
 }
-
