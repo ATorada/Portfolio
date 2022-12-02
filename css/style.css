@@ -104,7 +104,9 @@ body {
   background-color: #f3abff;
   color: white;
   padding: 3%;
-  border-radius: 2000px;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 50%;
   font-size: 2em;
 }
 
