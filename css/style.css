@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: #f7e7ff;
+  background-color: rgb(247, 231, 255);
+  overflow: hidden;
 }
 
 .cabecera {
@@ -104,8 +105,8 @@ body {
   background-color: #f3abff;
   color: white;
   padding: 3%;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 5%;
+  padding-right: 5%;
   border-radius: 50%;
   font-size: 2em;
 }
@@ -310,4 +311,29 @@ h1 {
 ::placeholder {
   color: #a12fa583;
   font-weight: bold;
+}
+
+main::-webkit-scrollbar{
+    display: none;
+  }
+
+@media (min-height: 30em) {
+  main {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
+
+section {
+  position: relative;
+  scroll-snap-align: center;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+@media (min-height: 30em) {
+  section {
+    height: 100vh;
+  }
 }
