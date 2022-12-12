@@ -3,14 +3,19 @@
 window.onload = function() {
     setTimeout(function() {
         document.getElementById('heart').style.opacity = '0';
-        //document.getElementById('heart').style.display = 'none';
-        //document.querySelector('main').style.display = 'block';
-        document.querySelector('main').style.opacity = '1';
-        //Cambiar el color de fondo con la propiedad background-color
-
     }, 5000);
 
     setTimeout(function() {
-        document.querySelector('main').style.opacity = '1';
+        document.getElementById('yoSoy').style.opacity = '1';
+    }, 7000);
+
+    setTimeout(function() {
+        document.getElementById('yoSoy').style.opacity = '0';
+        document.querySelector('main').style.display = 'block';
     }, 10000);
+
+    setTimeout(function() {
+        document.querySelector('main').style.opacity = '1';
+    }, 14000);
+
 }

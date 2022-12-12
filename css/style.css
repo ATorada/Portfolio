@@ -5,19 +5,29 @@
   src: url("font/Poppins-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Neon";
+  src: url("font/Neon.ttf");
+}
+
 * {
   font-family: "Poppins", sans-serif;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
-  background: linear-gradient(132deg, #4b185c, #9a56b3, #8229a0);
+  background: linear-gradient(132deg, #4b185c, #6f3d81, #8229a0);
   background-size: 400% 400%;
   animation: all 0s !important;
   animation: Gradient 10s ease infinite !important;
   transition: background 10s;
   -moz-transition: background 10s;
-  height: 100%;
+  height: 100vh;
   margin: 0;
+  color: white;
+  overflow: hidden;
 }
 
 @keyframes Gradient {
@@ -55,14 +65,194 @@ body {
 
 }
 
+#yoSoy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -250px;
+  opacity: 0;
+  transition: opacity 3.5s ease-in-out;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ba65ff,
+      -0.2rem 0.1rem 1rem #ba65ff, 0.2rem 0.1rem 1rem #ba65ff,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #af24ff, 0 0.5rem 3rem #af24ff;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 main {
   transition: opacity 3.5s ease-in-out;
   opacity: 0;
-  background: linear-gradient(132deg, #633b72, #9354a8, #580774);
   background-size: 400% 400%;
   animation: all 0s !important;
   margin : 0;
   animation: Gradient 10s ease infinite !important;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+  overflow-y: scroll;
 }
 
 #heart {
@@ -192,17 +382,17 @@ main {
 
 .Abajo {
   grid-area: Abajo;
-  background-color: #f3abff;
   color: white;
-  padding: 3%;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 50%;
   font-size: 2em;
 }
 
-.resaltado {
-  color: #f3abff;
+.resaltado, .Abajo {
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ba65ff,
+  -0.2rem 0.1rem 1rem #ba65ff, 0.2rem 0.1rem 1rem #ba65ff,
+  0 -0.5rem 2rem #af24ff, 0 0.5rem 3rem #af24ff;
+animation: shine 2s forwards, flicker 3s infinite;
+font-family: "Neon";
 }
 
 h1 {
@@ -213,24 +403,25 @@ h1 {
 
 .QuienSoy,
 .ComoTrabajo {
-  background-color: white;
+
   width: 70%;
   margin: auto;
   margin-top: 5%;
   border-radius: 50px;
 }
 
+
 .QuienSoy h1 {
   text-align: center;
   font-size: 3em;
   padding-top: 100px;
-  color: #132238;
+  color: white;
   font-style: italic;
 }
 
 .QuienSoy p {
   font-size: 1.5em;
-  color: black;
+  color: white;
   width: 45%;
   margin: auto;
   padding-top: 50px;
@@ -256,7 +447,7 @@ h1 {
 
 .SobreComoTrabajo {
   grid-area: SobreComoTrabajo;
-  color: #697484;
+  color: white;
   font-size: 20px;
   width: 475px;
   font-weight: 600;
@@ -267,21 +458,22 @@ h1 {
 .Disenyo,
 .Desarrollo {
   height: 250px;
-  box-shadow: 0 4px 2px -2px gray;
   padding: 25px;
-  background-color: rgb(253, 250, 255);
+  background-color: rgb(52, 23, 56);
   border-radius: 15%;
+  border: 0.2rem solid #fff;
+  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
 }
 
 .ComoTrabajo h1 {
   font-size: 1.5em;
   text-align: left;
   padding-top: 5px;
-  color: #132238;
+  color: white;
 }
 
 .ComoTrabajo img {
-  background-color: #edd8ff83;
+  background-color: #f2e3ffd7;
   border-radius: 20%;
   padding: 20px;
 }
@@ -341,25 +533,25 @@ h1 {
   height: 300px;
   background-color: #e1b6ec50;
   border-radius: 20px;
-  box-shadow: 0 4px 2px -2px gray;
+  border: 0.2rem solid #fff;
+  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
 }
 
 .Proyecto h1 {
   font-size: 1.5em;
   text-align: center;
   padding-top: 5px;
-  color: #132238;
+  color: white;
 }
 
 .Proyecto p {
   font-size: 1em;
   text-align: center;
   padding-top: 5px;
-  color: #132238;
+  color: white;
 }
 
 .Formulario {
-  background-color: white;
   width: 50%;
   margin: auto;
   text-align: center;
@@ -379,8 +571,17 @@ h1 {
   padding-left: 10px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #f8cfff44;
+  box-sizing: border-box;
+  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  background-color: #eee5f5;
   margin: 2%;
+  opacity: 0.5 ;
+  animation: opacity 2s ease;
+}
+
+input:focus, label:focus, input:hover, label:hover, textarea:hover, textarea:focus {
+  opacity: 1 !important;
+  animation: opacity 2s ease !important;
 }
 
 .Formulario textarea {
@@ -393,7 +594,11 @@ h1 {
   padding: 20px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #f8cfff44;
+  box-sizing: border-box;
+  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  background-color: #eee5f5;
+  opacity: 0.5 ;
+  animation: opacity 2s ease;
   min-height: 100px;
   max-height: 500px;
 }
