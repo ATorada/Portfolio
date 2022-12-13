@@ -15,6 +15,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: all 1 ;
 }
 
 body {
@@ -30,20 +31,6 @@ body {
   overflow: hidden;
 }
 
-@keyframes Gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-
-  50% {
-      background-position: 100% 50%;
-  }
-
-  100% {
-      background-position: 0% 50%;
-  }
-}
-
 #heart {
   position: absolute;
   font-size: 108px;
@@ -53,15 +40,15 @@ body {
   margin-left: -50px;
   color: #fff;
   text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #dbccff,
-      0 0 82px #dbccff,
-      0 0 92px #dbccff,
-      0 0 102px #dbccff,
-      0 0 151px #dbccff;
-      transition: opacity 2s;
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #dbccff,
+    0 0 82px #dbccff,
+    0 0 92px #dbccff,
+    0 0 102px #dbccff,
+    0 0 151px #dbccff;
+  transition: opacity 2s;
 
 }
 
@@ -69,15 +56,462 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 200px;
-  margin-top: -100px;
-  margin-left: -250px;
+  width: 31.25rem;
+  height: 12.5rem;
+  margin-top: -6.25rem;
+  margin-left: -15.625rem;
   opacity: 0;
   transition: opacity 3.5s ease-in-out;
 }
 
+main {
+  transition: opacity 3.5s ease-in-out;
+  opacity: 0;
+  background-size: 400% 400%;
+  animation: all 0s !important;
+  margin: 0;
+  animation: Gradient 10s ease infinite !important;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -1.063rem;
+  /* Increase/Decrease this value for cross-browser compatibility */
+  overflow-y: scroll;
+}
+
+#heart {
+  font-weight: 400;
+  font-size: 6.2rem;
+  animation: latido 1s infinite alternate;
+  border-radius: 2rem;
+}
+
+.cabecera {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 6.25rem;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "Logo Logo . . Inicio Sobre-mi Contacto";
+  text-align: center;
+}
+
+.Logo {
+  grid-area: Logo;
+}
+
+.Contacto {
+  grid-area: Contacto;
+}
+
+.Sobre-mi {
+  grid-area: Sobre-mi;
+}
+
+.Inicio {
+  grid-area: Inicio;
+}
+
+.logo_cabecera {
+  width: 18.75rem;
+  height: 18.75rem;
+}
+
+.bienvenida {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr) 6.25rem repeat(2, 1fr);
+  gap: 1.875rem 1.875rem;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    ". . . ."
+    ". Titulo Titulo ."
+    ". Titulo Titulo ."
+    ". Contactame DescargarCV ."
+    ". Abajo Abajo ."
+    ". . . .";
+}
+
+.Imagenes {
+  grid-area: Imagenes;
+  position: absolute;
+  top: 5.625rem;
+}
+
+.Titulo {
+  grid-area: Titulo;
+  line-height: 1;
+  font-weight: bold;
+  font-size: 5em;
+  text-align: center;
+}
+
+.boton {
+  padding: 0.625rem;
+  padding-left: 1.563rem;
+  padding-right: 1.563rem;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  text-shadow: 0.125rem 0.125rem 0.125rem #000000;
+  color: white;
+  border-radius: 1.25rem;
+  background-color: #f3abff;
+}
+
+.Contactame {
+  grid-area: Contactame;
+  justify-self: right;
+}
+
+.DescargarCV {
+  grid-area: DescargarCV;
+  justify-self: left;
+}
+
+.DescargarCV button {
+  background-color: #393e46b6;
+}
+
+.Abajo {
+  grid-area: Abajo;
+  color: white;
+  font-size: 2em;
+}
+
+.resaltado,
+.Abajo {
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ba65ff,
+    -0.2rem 0.1rem 1rem #ba65ff, 0.2rem 0.1rem 1rem #ba65ff,
+    0 -0.5rem 2rem #af24ff, 0 0.5rem 3rem #af24ff;
+  animation: shine 2s forwards, flicker 3s infinite;
+  font-family: "Neon";
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.QuienSoy,
+.ComoTrabajo {
+
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 50px;
+}
+
+
+.QuienSoy h1 {
+  text-align: center;
+  font-size: 3em;
+  padding-top: 100px;
+  color: white;
+  font-style: italic;
+}
+
+.QuienSoy p {
+  font-size: 1.5em;
+  color: white;
+  width: 45%;
+  margin: auto;
+  padding-top: 3.125rem;
+  padding-bottom: 6.25ren;
+  font-weight: 500;
+}
+
+.ComoTrabajo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr 1fr 18.75rem) 18.75rem 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem 1rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". SobreComoTrabajo SobreComoTrabajo . . Busqueda Analisis ."
+    ". SobreComoTrabajo SobreComoTrabajo . . Disenyo Desarrollo .";
+  width: 70%;
+
+  justify-items: center;
+  align-items: center;
+  padding: 1.875rem;
+}
+
+.SobreComoTrabajo {
+  grid-area: SobreComoTrabajo;
+  color: white;
+  font-size: 1.25;
+  width: 29.688rem;
+  font-weight: 600;
+}
+
+.Busqueda,
+.Analisis,
+.Disenyo,
+.Desarrollo {
+  height: 15.625rem;
+  padding: 1.563rem;
+  background-color: rgb(52, 23, 56);
+  border-radius: 15%;
+  border: 0.2rem solid #fff;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+}
+
+.ComoTrabajo h1 {
+  font-size: 1.5em;
+  text-align: left;
+  padding-top: 0.313rem;
+  color: white;
+}
+
+.ComoTrabajo img {
+  background-color: #f2e3ffd7;
+  border-radius: 20%;
+  padding: 1.25rem;
+}
+
+.Busqueda {
+  grid-area: Busqueda;
+}
+
+.Analisis {
+  grid-area: Analisis;
+}
+
+.Disenyo {
+  grid-area: Disenyo;
+}
+
+.Desarrollo {
+  grid-area: Desarrollo;
+}
+
+.NavProyectos {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: 6.25rem;
+  gap: 0px 1.25rem;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.NavProyectos button {
+  background-color: #393e4677;
+  font-size: 1.125rem;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.Proyectos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.25rem 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  justify-items: center;
+}
+
+.Proyecto {
+  width: 18.75rem;
+  height: 18.75rem;
+  background-color: #e1b6ec50;
+  border-radius: 1.25rem;
+  border: 0.2rem solid #fff;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px;
+}
+
+.Proyecto h1 {
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 0.313rem;
+  color: white;
+}
+
+.Proyecto p {
+  font-size: 1em;
+  text-align: center;
+  padding-top: 0.313rem;
+  color: white;
+}
+
+.Formulario {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 1.563rem;
+  border-radius: 10%;
+}
+
+.Formulario input:not([type="submit"]) {
+  width: 18.75rem;
+  height: 3.125rem;
+  border-radius: 1.25rem;
+  border: none;
+  padding-left: 0.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  box-sizing: border-box;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  background-color: #eee5f5;
+  margin: 2%;
+  opacity: 0.5;
+  animation: opacity 2s ease;
+}
+
+input:focus,
+input:hover,
+label:hover,
+textarea:hover,
+textarea:focus {
+  opacity: 1 !important;
+  transition: opacity 0.5s ease !important;
+}
+
+.Formulario textarea {
+  margin-top: 1.25rem;
+  resize: vertical;
+  width: 31.25rem;
+  height: 18.75rem;
+  border-radius: 1.25rem;
+  border: none;
+  padding: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  box-sizing: border-box;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  background-color: #eee5f5;
+  opacity: 0.5;
+  animation: opacity 2s ease;
+  min-height: 6.25rem;
+  max-height: 31.25rem;
+}
+
+@media screen and (max-width: 800px) {
+
+  .cabecera {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem 1.25rem;
+  }
+
+  .ComoTrabajo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Busqueda,
+  .Analisis,
+  .Disenyo,
+  .Desarrollo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .NavProyectos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem 1.25rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .Proyectos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3.25rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    justify-items: center;
+  }
+
+  .Proyecto h1 {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 0.313rem;
+    color: white;
+  }
+
+  .Formulario textarea {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@keyframes latido {
+  100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
+  }
+
+  0% {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes blink {
+
   0%,
   22%,
   36%,
@@ -87,11 +521,13 @@ body {
       -0.2rem 0.1rem 1rem #ba65ff, 0.2rem 0.1rem 1rem #ba65ff,
       0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   }
+
   28%,
   33% {
     color: #ff65bd;
     text-shadow: none;
   }
+
   82%,
   97% {
     color: #ff2483;
@@ -104,6 +540,7 @@ body {
     color: #6b1839;
     text-shadow: none;
   }
+
   100% {
     color: #ffe6ff;
     text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
@@ -237,398 +674,3 @@ body {
     opacity: 1;
   }
 }
-
-
-main {
-  transition: opacity 3.5s ease-in-out;
-  opacity: 0;
-  background-size: 400% 400%;
-  animation: all 0s !important;
-  margin : 0;
-  animation: Gradient 10s ease infinite !important;
-  display: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
-  overflow-y: scroll;
-}
-
-#heart {
-  font-weight: 400;
-  font-size: 6.2rem;
-  animation: latido 1s infinite alternate;
-  border-radius: 2rem;
-}
-
-@keyframes latido {
-  100% {
-      text-shadow:
-          0 0 4px #fff,
-          0 0 11px #fff,
-          0 0 19px #fff,
-          0 0 40px #bc13fe,
-          0 0 80px #bc13fe,
-          0 0 90px #bc13fe,
-          0 0 100px #bc13fe,
-          0 0 150px #bc13fe;
-  }
-
-  0% {
-      text-shadow:
-          0 0 2px #fff,
-          0 0 4px #fff,
-          0 0 6px #fff,
-          0 0 10px #bc13fe,
-          0 0 45px #bc13fe,
-          0 0 55px #bc13fe,
-          0 0 70px #bc13fe,
-          0 0 80px #bc13fe;
-  }
-}
-
-.cabecera {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 100px;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  justify-items: center;
-  align-items: center;
-  grid-template-areas: "Logo Logo . . Inicio Sobre-mi Contacto";
-  text-align: center;
-}
-
-.Logo {
-  grid-area: Logo;
-}
-
-.Contacto {
-  grid-area: Contacto;
-}
-
-.Sobre-mi {
-  grid-area: Sobre-mi;
-}
-
-.Inicio {
-  grid-area: Inicio;
-}
-
-.logo_cabecera {
-  width: 300px;
-  height: 300px;
-}
-
-.bienvenida {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr) 100px repeat(2, 1fr);
-  gap: 30px 30px;
-  grid-auto-flow: row;
-  justify-items: center;
-  align-items: center;
-  grid-template-areas:
-    ". . . ."
-    ". Titulo Titulo ."
-    ". Titulo Titulo ."
-    ". Contactame DescargarCV ."
-    ". Abajo Abajo ."
-    ". . . .";
-}
-
-.Imagenes {
-  grid-area: Imagenes;
-  position: absolute;
-  top: 90px;
-}
-
-.Titulo {
-  grid-area: Titulo;
-  line-height: 1;
-  font-weight: bold;
-  font-size: 5em;
-  text-align: center;
-}
-
-.boton {
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  font-size: 1.2em;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  text-shadow: 2px 2px 2px #000000;
-  color: white;
-  border-radius: 20px;
-  background-color: #f3abff;
-}
-
-.Contactame {
-  grid-area: Contactame;
-  justify-self: right;
-}
-
-.DescargarCV {
-  grid-area: DescargarCV;
-  justify-self: left;
-}
-
-.DescargarCV button {
-  background-color: #393e46b6;
-}
-
-.Abajo {
-  grid-area: Abajo;
-  color: white;
-  font-size: 2em;
-}
-
-.resaltado, .Abajo {
-  color: #ffe6ff;
-  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ba65ff,
-  -0.2rem 0.1rem 1rem #ba65ff, 0.2rem 0.1rem 1rem #ba65ff,
-  0 -0.5rem 2rem #af24ff, 0 0.5rem 3rem #af24ff;
-animation: shine 2s forwards, flicker 3s infinite;
-font-family: "Neon";
-}
-
-h1 {
-  font-size: 4em;
-  text-align: center;
-  margin-top: 5%;
-}
-
-.QuienSoy,
-.ComoTrabajo {
-
-  width: 70%;
-  margin: auto;
-  margin-top: 5%;
-  border-radius: 50px;
-}
-
-
-.QuienSoy h1 {
-  text-align: center;
-  font-size: 3em;
-  padding-top: 100px;
-  color: white;
-  font-style: italic;
-}
-
-.QuienSoy p {
-  font-size: 1.5em;
-  color: white;
-  width: 45%;
-  margin: auto;
-  padding-top: 50px;
-  padding-bottom: 100px;
-  font-weight: 500;
-}
-
-.ComoTrabajo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr 1fr 300px) 300px 1fr;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 16px 16px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". SobreComoTrabajo SobreComoTrabajo . . Busqueda Analisis ."
-    ". SobreComoTrabajo SobreComoTrabajo . . Disenyo Desarrollo .";
-  width: 70%;
-
-  justify-items: center;
-  align-items: center;
-  padding: 30px;
-}
-
-.SobreComoTrabajo {
-  grid-area: SobreComoTrabajo;
-  color: white;
-  font-size: 20px;
-  width: 475px;
-  font-weight: 600;
-}
-
-.Busqueda,
-.Analisis,
-.Disenyo,
-.Desarrollo {
-  height: 250px;
-  padding: 25px;
-  background-color: rgb(52, 23, 56);
-  border-radius: 15%;
-  border: 0.2rem solid #fff;
-  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
-}
-
-.ComoTrabajo h1 {
-  font-size: 1.5em;
-  text-align: left;
-  padding-top: 5px;
-  color: white;
-}
-
-.ComoTrabajo img {
-  background-color: #f2e3ffd7;
-  border-radius: 20%;
-  padding: 20px;
-}
-
-.Busqueda {
-  grid-area: Busqueda;
-}
-
-.Analisis {
-  grid-area: Analisis;
-}
-
-.Disenyo {
-  grid-area: Disenyo;
-}
-
-.Desarrollo {
-  grid-area: Desarrollo;
-}
-
-.NavProyectos {
-  display: grid;
-  grid-template-columns: repeat(4, 120px);
-  grid-template-rows: 100px;
-  gap: 0px 20px;
-  grid-auto-flow: row;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
-}
-
-.NavProyectos button {
-  background-color: #393e4677;
-  font-size: 18px;
-  text-shadow: 2px 2px 2px #000000;
-}
-
-.Proyectos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 300px);
-  gap: 32px 32px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". . .";
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  justify-items: center;
-}
-
-.Proyecto {
-  width: 300px;
-  height: 300px;
-  background-color: #e1b6ec50;
-  border-radius: 20px;
-  border: 0.2rem solid #fff;
-  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
-}
-
-.Proyecto h1 {
-  font-size: 1.5em;
-  text-align: center;
-  padding-top: 5px;
-  color: white;
-}
-
-.Proyecto p {
-  font-size: 1em;
-  text-align: center;
-  padding-top: 5px;
-  color: white;
-}
-
-.Formulario {
-  width: 50%;
-  margin: auto;
-  text-align: center;
-  padding: 25px;
-  border-radius: 10%;
-}
-
-.Formulario label {
-  font-weight: bold;
-}
-
-.Formulario input:not([type="submit"]) {
-  width: 300px;
-  height: 50px;
-  border-radius: 20px;
-  border: none;
-  padding-left: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  box-sizing: border-box;
-  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
-  background-color: #eee5f5;
-  margin: 2%;
-  opacity: 0.5 ;
-  animation: opacity 2s ease;
-}
-
-input:focus, label:focus, input:hover, label:hover, textarea:hover, textarea:focus {
-  opacity: 1 !important;
-  animation: opacity 2s ease !important;
-}
-
-.Formulario textarea {
-  margin-top: 20px;
-  resize: vertical;
-  width: 500px;
-  height: 300px;
-  border-radius: 20px;
-  border: none;
-  padding: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  box-sizing: border-box;
-  box-shadow:  #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
-  background-color: #eee5f5;
-  opacity: 0.5 ;
-  animation: opacity 2s ease;
-  min-height: 100px;
-  max-height: 500px;
-}
-
-/* ::placeholder {
-  color: #a12fa583;
-  font-weight: bold;
-}
-
-main::-webkit-scrollbar{
-    display: none;
-  }
-
-@media (min-height: 30em) {
-  main {
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    overflow-y: scroll;
-  }
-}
-
-section {
-  position: relative;
-  scroll-snap-align: center;
-  min-height: 100vh;
-  scroll-behavior: smooth;
-}
-
-@media (min-height: 30em) {
-  section {
-    height: 100vh;
-  }
-} */
