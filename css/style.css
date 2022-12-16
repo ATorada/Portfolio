@@ -98,7 +98,32 @@ main {
   align-items: center;
   grid-template-areas: "Logo Logo . . Inicio Sobre-mi Contacto";
   text-align: center;
+  font-size: 1.5em;
 }
+
+.Logo img {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+
+.Contacto:hover, .Sobre-mi:hover, .Inicio:hover {
+  transition: all 0.5s;
+  animation: salto 0.5s infinite alternate;
+}
+
+.Logo:hover {
+  animation: salto 0.5s infinite alternate;
+}
+
+@keyframes salto {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
 
 .Logo {
   grid-area: Logo;
@@ -249,7 +274,7 @@ h1 {
 .SobreComoTrabajo {
   grid-area: SobreComoTrabajo;
   color: white;
-  font-size: 1.25;
+  font-size: 1.25rem;
   width: 29.688rem;
   font-weight: 600;
 }
@@ -264,6 +289,7 @@ h1 {
   border-radius: 15%;
   border: 0.2rem solid #fff;
   box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  margin: 1%;
 }
 
 .ComoTrabajo h1 {
@@ -400,6 +426,28 @@ textarea:focus {
   animation: opacity 2s ease;
   min-height: 6.25rem;
   max-height: 31.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 1900px) {
+  .ComoTrabajo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Busqueda,
+  .Analisis,
+  .Disenyo,
+  .Desarrollo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -466,6 +514,7 @@ textarea:focus {
   .Formulario textarea {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
   }
 
 }
