@@ -10,12 +10,16 @@
   src: url("font/Neon.ttf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   font-family: "Poppins", sans-serif;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: all 1 ;
+  transition: all 1;
 }
 
 body {
@@ -31,6 +35,11 @@ body {
   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 #heart {
   position: absolute;
   font-size: 108px;
@@ -39,17 +48,9 @@ body {
   margin-top: -50px;
   margin-left: -50px;
   color: #fff;
-  text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #dbccff,
-    0 0 82px #dbccff,
-    0 0 92px #dbccff,
-    0 0 102px #dbccff,
-    0 0 151px #dbccff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dbccff,
+    0 0 82px #dbccff, 0 0 92px #dbccff, 0 0 102px #dbccff, 0 0 151px #dbccff;
   transition: opacity 2s;
-
 }
 
 #yoSoy {
@@ -79,6 +80,12 @@ main {
   right: -1.063rem;
   /* Increase/Decrease this value for cross-browser compatibility */
   overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+section:not(:first-child) {
+  margin-top: 15rem;
+  margin-bottom: 15rem;
 }
 
 #heart {
@@ -96,7 +103,7 @@ main {
   grid-auto-flow: row;
   justify-items: center;
   align-items: center;
-  grid-template-areas: "Logo Logo . . Inicio Sobre-mi Contacto";
+  grid-template-areas: "Logo Logo . . . Sobre-mi Contacto";
   text-align: center;
   font-size: 1.5em;
 }
@@ -106,7 +113,9 @@ main {
   height: 5.5rem;
 }
 
-.Contacto:hover, .Sobre-mi:hover, .Inicio:hover {
+.Contacto:hover,
+.Sobre-mi:hover,
+.Inicio:hover {
   transition: all 0.5s;
   animation: salto 0.5s infinite alternate;
 }
@@ -124,7 +133,6 @@ main {
   }
 }
 
-
 .Logo {
   grid-area: Logo;
 }
@@ -135,10 +143,6 @@ main {
 
 .Sobre-mi {
   grid-area: Sobre-mi;
-}
-
-.Inicio {
-  grid-area: Inicio;
 }
 
 .logo_cabecera {
@@ -188,7 +192,14 @@ main {
   text-shadow: 0.125rem 0.125rem 0.125rem #000000;
   color: white;
   border-radius: 1.25rem;
-  background-color: #f3abff;
+  background-color: #f2abffd7;
+}
+
+.boton:hover, .Proyecto:hover {
+  transform: scale(1.1);
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
+    #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  transition: all 0.5s;
 }
 
 .Contactame {
@@ -201,7 +212,7 @@ main {
   justify-self: left;
 }
 
-.DescargarCV button {
+.DescargarCV a {
   background-color: #393e46b6;
 }
 
@@ -229,13 +240,11 @@ h1 {
 
 .QuienSoy,
 .ComoTrabajo {
-
   width: 70%;
   margin: auto;
   margin-top: 5%;
   border-radius: 50px;
 }
-
 
 .QuienSoy h1 {
   text-align: center;
@@ -288,7 +297,8 @@ h1 {
   background-color: rgb(52, 23, 56);
   border-radius: 15%;
   border: 0.2rem solid #fff;
-  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
+    #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
   margin: 1%;
 }
 
@@ -354,12 +364,18 @@ h1 {
 }
 
 .Proyecto {
-  width: 18.75rem;
-  height: 18.75rem;
+  width: 15.75rem;
+  height: 15.75rem;
   background-color: #e1b6ec50;
   border-radius: 1.25rem;
   border: 0.2rem solid #fff;
-  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
+    #d082e4 0px 0px 50px;
+    padding: 1.5rem;
+}
+
+.Proyecto:hover {
+  background-color: #e1b6ec7a;
 }
 
 .Proyecto h1 {
@@ -393,7 +409,8 @@ h1 {
   font-size: 1.125rem;
   font-weight: bold;
   box-sizing: border-box;
-  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
+    #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
   background-color: #eee5f5;
   margin: 2%;
   opacity: 0.5;
@@ -420,7 +437,8 @@ textarea:focus {
   font-size: 1.125rem;
   font-weight: bold;
   box-sizing: border-box;
-  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px, #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
+  box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
+    #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
   background-color: #eee5f5;
   opacity: 0.5;
   animation: opacity 2s ease;
@@ -447,11 +465,9 @@ textarea:focus {
     align-items: center;
     width: 30%;
   }
-
 }
 
 @media screen and (max-width: 800px) {
-
   .cabecera {
     display: flex;
     flex-direction: column;
@@ -516,32 +532,17 @@ textarea:focus {
     margin-right: auto;
     width: 100%;
   }
-
 }
 
 @keyframes latido {
   100% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #bc13fe,
-      0 0 80px #bc13fe,
-      0 0 90px #bc13fe,
-      0 0 100px #bc13fe,
-      0 0 150px #bc13fe;
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe,
+      0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
   }
 
   0% {
-    text-shadow:
-      0 0 2px #fff,
-      0 0 4px #fff,
-      0 0 6px #fff,
-      0 0 10px #bc13fe,
-      0 0 45px #bc13fe,
-      0 0 55px #bc13fe,
-      0 0 70px #bc13fe,
-      0 0 80px #bc13fe;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+      0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
   }
 }
 
@@ -560,7 +561,6 @@ textarea:focus {
 }
 
 @keyframes blink {
-
   0%,
   22%,
   36%,

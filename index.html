@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="prueba.js"></script>
+    <script src="js/loading.js"></script>
 </head>
 
 <body>
@@ -20,10 +20,9 @@
         <section class="section1">
             <header>
                 <div class="cabecera">
-                    <div class="Logo"><img class="logo_cabecera" src="img/logo/icon.png" alt="Logo"></div>
-                    <div class="Contacto">Contacto</div>
-                    <div class="Sobre-mi">Sobre mí</div>
-                    <div class="Inicio">Inicio</div>
+                    <div class="Logo"><a href="index.html"><img class="logo_cabecera" src="img/logo/icon.png" alt="Logo"></a></div>
+                    <div class="Contacto"><a href="#Contacto" >Contacto</a></div>
+                    <div class="Sobre-mi"><a href="#SobreMi">Sobre mí</a></div>
                 </div>
             </header>   
             <div class="contenido" data-content>
@@ -46,15 +45,15 @@
                         </div> -->
                     <div class="Titulo">SOFTWARE <br>AND WEB <br><span class="resaltado">DEVELOPER</span>
                     </div>
-                    <div class="Contactame"><button class="boton">Contáctame</button></div>
-                    <div class="DescargarCV"><button class="boton">Descargar CV</button></div>
+                    <div class="Contactame"><a href="#Contact" class="boton">Contáctame</a></div>
+                    <div class="DescargarCV"><a class="boton" href="files/AngelTorada_CV.pdf" download="AngelTorada_CV.pdf">Descargar CV</a></div>
                     <div class="Abajo">↓</div>
                 </div>
             </div>
         </section>
 
 
-        <section class="section2">
+        <section class="section2" name="SobreMi" id="SobreMi">
             <div class="contenido" data-content>
                 <h1>Sobre <span class="resaltado">mí</span></h1>
 
@@ -123,10 +122,12 @@
                 </div>
 
                 <div class="Proyectos">
-                    <div class="Proyecto">
-                        <h1>Proyecto 1</h1>
-                        <p>Proyecto 1</p>
-                    </div>
+                    <a href="portfolio.html">
+                        <div class="Proyecto">
+                            <h1>Portfolio</h1>
+                            <p>Proyecto que consiste en realizar un portfolio que servirá como carta de presentación laboral futura.</p>
+                        </div>
+                    </a>
                     <div class="Proyecto">
                         <h1>Proyecto 2</h1>
                         <p>Proyecto 2</p>
@@ -151,16 +152,16 @@
             </div>
         </section>
 
-        <section class="section5">
+        <section class="section5" name="#Contacto" id="Contacto">
             <div class="contenido" data-content>
                 <h1>¿Te ha <span class="resaltado">gustado?</span></h1>
 
                 <div class="Formulario">
-                    <form action="index.html" method="post">
+                    <form action="mailto:angel.torada@gmail.com" method="post">
 
-                        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre"> <br>
 
-                        <input type="email" name="email" id="email" placeholder="Email">
+                        <!--<input type="email" name="email" id="email" placeholder="Email">-->
 
                         <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea> <br>
 
