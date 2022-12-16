@@ -195,7 +195,8 @@ section:not(:first-child) {
   background-color: #f2abffd7;
 }
 
-.boton:hover, .Proyecto:hover {
+.boton:hover,
+.Proyecto:hover {
   transform: scale(1.1);
   box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
     #d082e4 0px 0px 50px, #d082e4 0px 0px 75px;
@@ -372,7 +373,7 @@ h1 {
   border: 0.2rem solid #fff;
   box-shadow: #d082e4 0px 0px 20px, #d082e4 0px 0px 30px, #d082e4 0px 0px 40px,
     #d082e4 0px 0px 50px;
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .Proyecto:hover {

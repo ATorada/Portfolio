@@ -4,20 +4,20 @@ window.onload = function () {
         setTimeout(function () {
             document.getElementById('heart').style.opacity = '0';
         }, 5000);
-    
+
         setTimeout(function () {
             document.getElementById('yoSoy').style.opacity = '1';
         }, 7000);
-    
+
         setTimeout(function () {
             document.getElementById('yoSoy').style.opacity = '0';
             document.querySelector('main').style.display = 'block';
         }, 10000);
-    
+
         setTimeout(function () {
             document.querySelector('main').style.opacity = '1';
         }, 14000);
-    
+
         createCookie("loading", "true", 5);
     } else {
         document.getElementById('heart').style.display = 'none';
@@ -25,7 +25,7 @@ window.onload = function () {
         document.querySelector('main').style.display = 'block';
         document.querySelector('main').style.opacity = '1';
     }
-        
+
 }
 function createCookie(name, value, min) {
     var expires;
